@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import './App.css'
 import { Modal } from './components/Modal'
+import { Button, Grid } from '@mui/material'
 
 function App() {
   const [open, setOpen] = useState<boolean>(false)
-  console.log('🚀~ file: app.tsx:7 ~ App ~ open:', open)
   return (
-    <div className='App'>
+    <Grid container spacing={2} sx={{width: '100vw', height: '100vh', backgroundColor: 'rgb(47, 32, 255)'}}>
+
       <h2>Clique no meu botão</h2>
-      <button onClick={()=> setOpen(!open)}>Clique em mim 😈</button>
+      <Button color='secondary' variant='contained' onClick={()=> setOpen(!open)}>Clique em mim 😈</Button>
 
       <Modal 
         isOpen={open} 
@@ -16,7 +17,7 @@ function App() {
         title={'Bem Vindo!'}
         description={"Crie sua conta para pode fazer um teste grátis de 3 dias"}
       />
-    </div>
+    </Grid>
   )
 }
 
